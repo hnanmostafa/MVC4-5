@@ -1,0 +1,29 @@
+﻿
+@using Demo.DataAccessLayer.Models
+@model Department
+@{
+    ViewData["Title"] = "Delelte";
+}
+
+<h1 class="alert-danger">Delete @Model.Name Department ?? </h1>
+
+
+<form method="post" asp-action="Delete">
+    <div class="form-group">
+        <label asp-for="Code"></label>
+        <input readonly class="form-control" asp-for="Code" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input readonly class="form-control" asp-for="Name" />
+    </div>
+    <div class="form-group">
+        <label asp-for="DateOfCreation"></label>
+        <input readonly class="form-control" asp-for="DateOfCreation" />
+    </div>
+
+    <div>
+        <a asp-action="ConfirmDelete" class="btn btn-danger" asp-route-id="@Model.Id">Delete</a>
+        <a asp-action="Index" class="btn btn-secondary">Back</a>
+    </div>
+</form>
